@@ -1,2 +1,2 @@
 # json-parser
-A simple JSON Parser written in C++
+A simple JSON Parser written in python
