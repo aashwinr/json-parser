@@ -32,12 +32,12 @@ class JSONObject:
     def __init__(self, key_value_pairs) -> None:
         self.key_value_pairs = key_value_pairs
     def __repr__(self) -> str:
-        repr_string = '{\n'
-        key_value_pair_list = list(self.key_value_pairs.items())
-        iter_len = len(key_value_pair_list) - 1
-        for i in range(iter_len):
-            repr_string += f'{key_value_pair_list[i][0]}:{key_value_pair_list[i][1]},\n'
-        repr_string += f'{key_value_pair_list[-1][0]}:{key_value_pair_list[-1][1]}\n}}\n'
+        repr_string = self.key_value_pairs # '{\n'
+        # key_value_pair_list = list(self.key_value_pairs.items())
+        # iter_len = len(key_value_pair_list) - 1
+        # for i in range(iter_len):
+        #     repr_string += f'{key_value_pair_list[i][0]}:{key_value_pair_list[i][1]},\n'
+        # repr_string += f'{key_value_pair_list[-1][0]}:{key_value_pair_list[-1][1]}\n}}'
         return f'JSONObject({repr_string})'
 
 class JSONArray:

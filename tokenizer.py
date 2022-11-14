@@ -6,6 +6,11 @@ class Tokenizer:
   def next(self):
     return self.content[self.pos]
 
+  def next_n(self, n):
+    if self.pos + n < len(self.content):
+      return self.content[self.pos:self.pos + n]
+    raise IndexError('Requested sequence length greater than remaining string length')
+
   def consume(self):
     next_val = self.next()
     self.pos += 1
@@ -26,3 +31,6 @@ class Tokenizer:
 
   def eof(self):
     return self.pos >= len(self.content)
+
+  def tokenize(self):
+    raise NotImplementedError('Abstract function hasn\'t been implemented by subclass')

@@ -1,9 +1,17 @@
-object = {
-    "hello":"world",
-    "key2":"value2",
-    "key3":"value3"
-}
+import argparse
+from json_tokenizer import JSON_Tokenizer
 
-kvpairs = list(object.items())
-for i in kvpairs:
-    print(f'Key: {i[0]}, Value: {i[1]}')
+def main(filename):
+    with open(filename, encoding='utf-8') as file:
+        file_contents = file.read()
+        tokenizer = JSON_Tokenizer(file_contents)
+        tokenized = tokenizer.tokenize()
+        print(tokenized)
+
+parser = argparse.ArgumentParser(
+    prog = 'JSON Parser',
+    description = 'This program can parse valid JSON Files'
+)
+parser.add_argument('-f', '--file', type = str, action = 'store', required = True, dest = 'filename', help = 'Provide the path of the JSON File')
+args = parser.parse_args()
+main(args.filename)
