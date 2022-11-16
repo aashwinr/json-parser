@@ -7,3 +7,7 @@ class IncorrectIdentifierError(Exception):
     def __init__(self, *args: object) -> None:
         self.message = 'String values must be encapsulated in double quotes "'
         super().__init__(*args, self.message)
+
+class UnexpectedTokenError(Exception):
+    def __init__(self, msg: str, *args: object) -> None:
+        super().__init__(msg, *args)
