@@ -1,12 +1,18 @@
 import argparse
-from json_tokenizer import JSON_Tokenizer
+from json_tokenizer import JSONTokenizer
+from json_types import *
+from json_parser import JSONParser
 
 def main(filename):
     with open(filename, encoding='utf-8') as file:
         file_contents = file.read()
-        tokenizer = JSON_Tokenizer(file_contents)
+        tokenizer = JSONTokenizer(file_contents)
         tokenized = tokenizer.tokenize()
-        print(tokenized)
+        parser = JSONParser(tokenized)
+        parsed = parser.parse()
+        print('Tokenized output:', tokenized)
+        print('Parsed output:', parsed)
+
 
 parser = argparse.ArgumentParser(
     prog = 'JSON Parser',

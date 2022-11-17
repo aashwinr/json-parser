@@ -1,4 +1,4 @@
-from json_parser import JSON_Parser
+from json_parser import JSONParser
 
 class JSON:
     def __init__(self, ) -> None:

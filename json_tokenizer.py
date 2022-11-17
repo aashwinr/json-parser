@@ -8,7 +8,7 @@ class TokenizerHelpers:
         return digit in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
-class JSON_Tokenizer(Tokenizer):
+class JSONTokenizer(Tokenizer):
     def __init__(self, contents):
         super().__init__(contents)
 
